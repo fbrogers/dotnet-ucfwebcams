@@ -3,8 +3,8 @@ UCF Campus Webcams
 
 A simple site that reconstitutes single JPEG images from within the UCF firewall for outside consumption via Motion-JPEG.
 
-Included Libraries/Frameworks
------------------------------
+Libraries/Frameworks Used
+-------------------------
 
 - Microsoft MVC 3.0.0.0
 - Entity Framework 4.1.0.0
