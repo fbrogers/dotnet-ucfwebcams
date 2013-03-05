@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+@{
+    var html_title = Html.Raw(ViewBag.Title != string.Empty ? Html.Encode(ViewBag.Title) + " &raquo;" : string.Empty);
+    var kml = string.Format("http://maps.google.com/?q=http%3A%2F%2Fwebcams.sdes.ucf.edu{0}", Url.Action("kml", "webcam"));
+}
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<title>@html_title Campus Webcams &raquo; UCF</title>
+    
+    <!-- CUSTOM UCF MARKETING HEADER -->
+	<script type="text/javascript" src="http://assets.sdes.ucf.edu/scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="http://assets.sdes.ucf.edu/scripts/ucf.simplebar.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://assets.sdes.ucf.edu/css/ucf.simplebar.css" />
+    <!-- /CUSTOM UCF MARKETING HEADER -->
+    
+	<!-- STYLES -->
+    <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_ucf.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_print.css" type="text/css" media="print" />
+	<link rel="shortcut icon" href="http://assets.sdes.ucf.edu/images/favicon_black.png" type="text/css" />
+	<!-- /STYLES -->
+		
+	<!-- GA-ASYNC -->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-6562360-48']);
+        _gaq.push(['_trackPageview']);
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+        })();      
+    </script>
+	<!-- /GA-ASYNC -->
+</head>
+
+<body>
+	<!-- HEADER -->
+    <div id="header_container">
+        <div id="header">
+            <div id="title">
+                @Html.ActionLink("Campus Webcams", "Index", "webcam")
+            </div>
+            <div id="subtitle">
+                <a href="http://www.sdes.ucf.edu/">Student Development<br />and Enrollment Services</a>
+            </div>
+        </div>
+    </div>
+    <!-- /HEADER --> 
+    
+    <!-- NAVIGATION -->
+    <div id="nav_container"></div>
+    <!-- /NAVIGATION -->
+
+    <!-- CONTENT -->
+    <div id="content_container">
+		<div class="shadow"></div>
+	
+        @RenderSection("billboard", false)
+    				
+		<!-- CONTENT-MAIN -->
+		@RenderSection("above", false)
+        <div class="content-main-top"></div>        
+        <div class="content-main-body">
+            <div class="content-main">
+				@RenderSection("links", false)
+                @if(ViewBag.Title != string.Empty)
+                {
+                    <h1>@ViewBag.Title</h1>
+                    <div class="top"></div>
+                }
+				@RenderBody()
+				<div class="hr-blank"></div>
+            </div>
+        </div>
+        <div class="content-main-bottom"></div>
+		@RenderSection("below", false)
+        <!-- /CONTENT-MAIN -->
+        
+		<!-- CONTENT-END -->
+		<div class="content-main-top"></div>
+		<div class="content-main-body">
+            <div class="content-end">
+                <a href="http://get.adobe.com/reader/">
+                    <img src="http://assets.sdes.ucf.edu/images/content-end-pdf.jpg" class="icon" alt="icon" title="Get Adobe Reader" />
+                </a>
+                <ul>
+                    <li>@Html.ActionLink("Public Feed", "feed", "webcam")</li>
+                    <li><a href="@kml">View on Google Maps</a></li>
+                </ul>
+            </div>
+		</div>
+		<div class="content-main-bottom"></div>
+        <!-- /CONTENT-END -->
+    </div>
+	<!-- /CONTENT -->
+
+	<!-- FOOTER -->
+	<div id="footer_container">
+       	<div id="footer">
+        
+			<!-- STANDARD SDES LINKS -->
+    		<div class="col3-1">
+            	<div class="h1"><a href="http://www.sdes.ucf.edu/">Site Hosted By SDES</a></div>
+                <div class="hr"></div>
+                <ul>
+                    <li><a href="http://www.sdes.ucf.edu/">SDES Home</a></li>
+                    <li><a href="http://www.sdes.ucf.edu/about">What is SDES? / About</a></li>
+                    <li><a href="http://www.sdes.ucf.edu/departments">SDES Departments</a></li>
+                    <li><a href="http://www.sdes.ucf.edu/events">Division Calendar</a></li>
+                    <li><a href="http://www.sdes.ucf.edu/contact">Contact Us</a></li>
+                    <li><a href="http://www.sdes.ucf.edu/staff">SDES Leadership Team</a></li>
+                    <li><a href="http://creed.sdes.ucf.edu/">The UCF Creed</a></li>
+                    <li><a href="http://it.sdes.ucf.edu/">SDES Information Technology</a></li>
+                </ul>
+            </div>   
+			<!-- /STANDARD SDES LINKS -->
+             
+			<!-- APP BY SDES IT -->
+			<div class="col3-2">
+            	<div class="h1">Application by SDES IT</div>
+                <div class="hr"></div>
+                <ul>
+                    <li><a href="http://it.sdes.ucf.edu/">SDES Information Technology Home</a></li>
+                    <li><a href="http://it.sdes.ucf.edu/about">About SDES IT</a></li>
+                    <li><a href="http://it.sdes.ucf.edu/teams">The Teams of SDES IT</a></li>
+                    <li><a href="http://it.sdes.ucf.edu/services">IT Provided Services</a></li>
+                    <li><a href="http://it.sdes.ucf.edu/training/">SDES IT Training</a></li>
+                    <li><a href="http://it.sdes.ucf.edu/contact">Contact Us</a></li>
+                    <li><a href="http://it.sdes.ucf.edu/feedback">Feedback Form</a></li>
+                    <li><a href="https://portal.sdes.ucf.edu/technology/callticket/staff_submit.aspx">Submit a Call Ticket</a></li>
+                </ul>
+            </div>
+			<!-- /APP BY SDES IT -->
+
+			<!-- SEARCH AND CONTACT -->
+    		<div class="col3-3">
+            	<div class="h1">Search SDES</div>
+                <div id="search">
+					<form action="http://google.cc.ucf.edu/search" method="get">
+						<fieldset>
+							<input type="text" id="input" name="q" />
+							<input type="hidden" name="output" value="xml_no_dtd" />
+							<input type="hidden" name="proxystylesheet" value="UCF_Main" />
+							<input type="hidden" name="client" value="UCF_Main" />
+							<input type="hidden" name="site" value="UCF_Main" />
+							<input type="image" src="https://assets.sdes.ucf.edu/images/footer-search-submit.png" id="sdes-submit" alt="magnifying glass" />
+						</fieldset>
+					</form>                
+                </div>
+            	<div class="h1">Contact</div>
+                <div class="hr"></div>
+				<p>
+					<a href="./">UCF Campus Webcams</a><br />
+					University of Central Florida &bull; Orlando, FL 32816<br />
+					Maintained by <a href="http://it.sdes.ucf.edu/">SDES Information Technology</a>
+                </p>
+            </div>    
+			<!-- /SEARCH AND CONTACT -->
+			
+        </div>  
+    </div>
+    <!-- /FOOTER -->
+	
+	<!-- SUB FOOTER -->
+    <div id="sub_footer_container">
+        <div id="sub_footer">
+			<div id="w3c">
+				<a href="http://validator.w3.org/check?uri=referer">Valid HTML 5</a> &bull;
+				<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">Valid CSS 3</a> &bull;
+				<a href="@Url.Action("Index", "cam", new{ area = "admin" }, null)"><img src="http://assets.sdes.ucf.edu/images/sub-footer-pegasus.png" id="pegasus" alt="Pegasus" /></a>
+			</div>
+            <span>
+                Copyright &copy; @DateTime.Now.Year <a href="http://www.sdes.ucf.edu/">Student Development and Enrollment Services</a>
+            </span> 
+        </div>    
+    </div>
+	<!-- /SUB FOOTER -->
+</body>
+</html>

@@ -1,0 +1,140 @@
+﻿@model SDES___Webcams.Areas.admin.Models.CamViewModel
+
+@{
+    ViewBag.Title = "Add New Camera";
+    Layout = "~/Areas/admin/Views/Shared/_Admin.cshtml";
+}
+
+@section links{
+    <ul class="content-main-links">
+        <li>@Html.ActionLink("Back to List", "Index")</li>
+    </ul>
+}
+
+@using (Html.BeginForm()) {
+    <div class="fieldset">
+         <fieldset>
+             <div class="space-left">
+                 @Html.ValidationSummary(true)
+             </div>
+
+             <div class="shift-right">
+                 <div class="editor-label">
+                     @Html.LabelFor(model => model.camName)
+                 </div>
+                 <div class="editor-field">
+                     @Html.EditorFor(model => model.camName)
+                     @Html.ValidationMessageFor(model => model.camName)
+                 </div>
+
+                 <div class="editor-label">
+                     @Html.LabelFor(model => model.camShortDesc)
+                 </div>
+                 <div class="editor-field short">
+                     @Html.EditorFor(model => model.camShortDesc)
+                     @Html.ValidationMessageFor(model => model.camShortDesc)
+                 </div>
+
+                 <div class="editor-label">
+                     @Html.LabelFor(model => model.camLongDesc)
+                 </div>
+                 <div class="editor-field long">
+                     @Html.EditorFor(model => model.camLongDesc)
+                     @Html.ValidationMessageFor(model => model.camLongDesc)
+                 </div>
+
+                 <div class="editor-label">
+                     @Html.LabelFor(model => model.camJpegUri)
+                 </div>
+                 <div class="editor-field">
+                     @Html.EditorFor(model => model.camJpegUri)
+                     @Html.ValidationMessageFor(model => model.camJpegUri)
+                 </div>
+                 
+                <div class="global-col2-1">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.camJpegQuality)
+                    </div>
+                    <div class="editor-field">
+                        @Html.DropDownList("camJpegQuality", Model.jpegQualityList, string.Empty, Model.camJpegQuality)
+                        @Html.ValidationMessageFor(model => model.camJpegQuality)
+                    </div>
+                </div>
+                <div class="global-col2-2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.camInterval)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.camInterval)
+                        @Html.ValidationMessageFor(model => model.camInterval)
+                    </div>
+                </div>
+                <div class="hr-clear"></div>
+
+                <div class="global-col2-1">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.camLocationName)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.camLocationName)
+                        @Html.ValidationMessageFor(model => model.camLocationName)
+                    </div>
+                </div>
+                <div class="global-col2-2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.camLocationId)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.camLocationId)
+                        @Html.ValidationMessageFor(model => model.camLocationId)
+                    </div>
+                </div>
+                <div class="hr-clear"></div>
+  
+                <div class="global-col2-1">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.camLat)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.camLat)
+                        @Html.ValidationMessageFor(model => model.camLat)
+                    </div>
+                </div>
+                <div class="global-col2-2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.camLong)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.camLong)
+                        @Html.ValidationMessageFor(model => model.camLong)
+                    </div>
+                </div>
+                <div class="hr-clear"></div>
+
+                <div class="global-col2-1">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.isEnabled)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.isEnabled)
+                        @Html.ValidationMessageFor(model => model.isEnabled)
+                    </div>
+                </div>
+                <div class="global-col2-2">
+                    <div class="editor-label">
+                        @Html.LabelFor(model => model.isBlurred)
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.isBlurred)
+                        @Html.ValidationMessageFor(model => model.isBlurred)
+                    </div>
+                </div>
+                <div class="hr-clear"></div>
+             </div>
+         </fieldset>
+
+        <div class="submitbox">
+            <input type="submit" value="@ViewBag.Title" />
+        </div>
+    </div>
+}

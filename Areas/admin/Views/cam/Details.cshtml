@@ -1,0 +1,79 @@
+﻿@model SDES___Webcams.Models.cam
+
+@{
+    ViewBag.Title = "Camera Details";
+    Layout = "~/Areas/admin/Views/Shared/_Admin.cshtml";
+}
+
+@section links{
+    <ul class="content-main-links">
+        <li>@Html.ActionLink("Back to List", "Index")</li>
+    </ul>
+}
+
+<div class="sidebar-right">
+    <img src="@Url.Action("Stream", "webcam", new { @id = Model.camId, area = string.Empty })" class="admin-details-stream" alt=""/>
+</div>
+
+<div class="left">
+    <table class="grid smaller">
+        <tr>
+            <th scope="col" style="width: 175px;">Column</th>
+            <th scope="col">Value</th>
+        </tr>
+        <tr>
+            <th scope="row">Name</th>
+            <td>@Model.camName</td>
+        </tr>
+        <tr>
+            <th scope="row">Location</th>
+            <td><a href="http://map.ucf.edu/?show=@Model.camLocationId" class="external">@Model.camLocationName</a></td>
+        </tr>
+        <tr>
+            <th scope="row">Coordinates</th>
+            <td>@Model.camLat, @Model.camLong</td>
+        </tr>
+        <tr>
+            <th scope="row">JPEG Single Frame Source</th>
+            <td>
+                <a href="@Model.camJpegUri">@Model.camJpegUri</a>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">JPEG Single Frame Output</th>
+            <td>@Html.ActionLink("[Link]", "Frame", "webcam", new{ @id = Model.camId, area = string.Empty}, null)</td>
+        </tr>
+        <tr>
+            <th scope="row">Motion-JPEG Output</th>
+            <td>@Html.ActionLink("[Link]", "Stream", "webcam", new{ @id = Model.camId, area = string.Empty}, null)</td>
+        </tr>
+        <tr>
+            <th scope="row">Frame Rate</th>
+            <td>@Model.camInterval Second(s)</td>
+        </tr>
+        <tr>
+            <th scope="row">JPEG Compression (0-100)</th>
+            <td>@Model.camJpegQuality</td>
+        </tr>
+        <tr>
+            <th scope="row">Camera Enabled?</th>
+            <td>@(Model.isEnabled ? "Yes" : "No")</td>
+        </tr>
+        <tr>
+            <th scope="row">Image Blurred?</th>
+            <td>@(Model.isBlurred ? "Yes" : "No")</td>
+        </tr>
+        <tr>
+            <th scope="row">Short Description</th>
+            <td>
+                <p>@Model.camShortDesc</p>
+            </td>
+        </tr>
+        <tr>
+            <th scope="row">Long Description</th>
+            <td>
+                <p>@Model.camLongDesc</p>
+            </td>
+        </tr>
+    </table>
+</div>

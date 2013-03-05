@@ -1,0 +1,57 @@
+.editor-field.short textarea
+{
+    width: 500px;
+    height: 50px;
+}
+
+.editor-field.long textarea
+{
+    width: 500px;
+    height: 200px;
+}
+
+.jbox.ipad .outer-content
+{
+    height: 2em;
+}
+
+.content-main .jbox
+{
+    margin-bottom: 15px;
+}
+
+.jbox-title {
+    width: 100%;
+    color: black;
+    font-size: 1.25em;
+    text-transform: none;
+    font-family: inherit;
+}
+
+.jbox-title a {
+    text-decoration: none;
+}
+
+.content-main .jbox img.webcam-thumb {
+    width: 280px; 
+    margin-top: -8px
+}
+
+img.details-view 
+{
+    width: 630px;
+    min-height: 355px;
+    max-height: 480px;
+    box-shadow: 0px 3px 6px #ccc;
+    background: url("https://assets.sdes.ucf.edu/images/ajax-loader.gif") no-repeat center center white;
+}
+
+img.admin-details-stream {
+    width: 280px;
+    min-height: 210px;
+    background: url("https://assets.sdes.ucf.edu/images/ajax-loader.gif") no-repeat center center white;
+    box-shadow: 0px 3px 6px #ccc;
+    padding: 0;
+    border: 0;
+    margin-top: 2px;
+}

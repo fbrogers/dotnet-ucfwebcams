@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<title>Campus Webcams Administration</title>
+    
+    <!-- CUSTOM UCF MARKETING HEADER -->
+	<script type="text/javascript" src="http://assets.sdes.ucf.edu/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/mvc/3.0/jquery.validate.unobtrusive.min.js"></script>
+    <script type="text/javascript" src="http://assets.sdes.ucf.edu/scripts/ucf.simplebar.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://assets.sdes.ucf.edu/css/ucf.simplebar.css" />
+    <!-- /CUSTOM UCF MARKETING HEADER -->
+    
+	<!-- STYLES -->
+    <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_admin.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_survey.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_print.css" type="text/css" media="print" />
+	<link rel="shortcut icon" href="http://assets.sdes.ucf.edu/images/favicon_black.png" type="text/css" />
+	<!-- /STYLES -->
+</head>
+<body>
+	<!-- HEADER -->
+    <div id="header_container">
+        <div id="header">
+            <div id="title">
+                @Html.ActionLink("Administration Console", "Index", "cam")
+            </div>
+            <div id="subtitle">
+                @Html.ActionLink("Campus Webcams", "Index", "webcam", new { area = "" }, null)
+            </div>			
+        </div>
+    </div>
+    <!-- /HEADER -->
+    
+    <!-- NAVIGATION -->
+    <div id="nav_container"></div>
+	<!-- /NAVIGATION -->
+
+    <!-- CONTENT -->
+    <div id="content_container">
+		<div class="shadow"></div>
+					
+		<!-- CONTENT-MAIN -->
+		@RenderSection("above", false)
+        <div class="content-main-top"></div>        
+        <div class="content-main-body">
+            <div class="content-main">
+				@RenderSection("links", false)
+                <h1>@ViewBag.Title</h1>
+                <div class="top"></div>
+				@RenderBody()
+				<div class="hr-blank"></div>
+            </div>
+        </div>
+        <div class="content-main-bottom"></div>
+		@RenderSection("below", false)
+		<!-- /CONTENT-MAIN -->
+    </div>
+	<!-- /CONTENT -->
+
+	<!-- FOOTER -->
+	<div id="footer_container"></div>
+    <!-- /FOOTER -->
+
+	<!-- SUB FOOTER -->
+    <div id="sub_footer_container">
+        <div id="sub_footer">
+			<div id="w3c">
+				<a href="#">Valid HTML 5</a> &bull;
+				<a href="#">Valid CSS 3</a> &bull;
+				<a href="#"><img src="http://assets.sdes.ucf.edu/images/sub-footer-pegasus.png" id="pegasus" alt="Pegasus" /></a>
+			</div>
+			<span>Copyright &copy; @DateTime.Now.Year <a href="http://www.sdes.ucf.edu/">Student Development and Enrollment Services</a></span> 
+        </div>    
+    </div>
+	<!-- /SUB FOOTER -->
+</body>
+</html>

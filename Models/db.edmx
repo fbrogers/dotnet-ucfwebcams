@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="IT_WebcamsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="IT_WebcamsModelStoreContainer">
+          <EntitySet Name="cam" EntityType="IT_WebcamsModel.Store.cam" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="cam">
+          <Key>
+            <PropertyRef Name="camId" />
+          </Key>
+          <Property Name="camId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="camName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="camShortDesc" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="camLongDesc" Type="varchar(max)" Nullable="false" />
+          <Property Name="camLocationName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="camLocationId" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="camLat" Type="numeric" Nullable="false" Precision="9" Scale="6" />
+          <Property Name="camLong" Type="numeric" Nullable="false" Precision="9" Scale="6" />
+          <Property Name="camInterval" Type="tinyint" Nullable="false" />
+          <Property Name="camJpegUri" Type="varchar" Nullable="false" MaxLength="255" />
+          <Property Name="camJpegQuality" Type="tinyint" Nullable="false" />
+          <Property Name="isEnabled" Type="bit" Nullable="false" />
+          <Property Name="isBlurred" Type="bit" Nullable="false" />
+          <Property Name="created" Type="datetime" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="IT_WebcamsModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="IT_WebcamsEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="cams" EntityType="IT_WebcamsModel.cam" />
+        </EntityContainer>
+        <EntityType Name="cam">
+          <Key>
+            <PropertyRef Name="camId" />
+          </Key>
+          <Property Name="camId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="camName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="camShortDesc" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="camLongDesc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="camLocationName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="camLocationId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="camLat" Type="Decimal" Nullable="false" Precision="9" Scale="6" />
+          <Property Name="camLong" Type="Decimal" Nullable="false" Precision="9" Scale="6" />
+          <Property Name="camInterval" Type="Byte" Nullable="false" />
+          <Property Name="camJpegUri" Type="String" Nullable="false" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="camJpegQuality" Type="Byte" Nullable="false" />
+          <Property Name="isEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="isBlurred" Type="Boolean" Nullable="false" />
+          <Property Name="created" Type="DateTime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="IT_WebcamsModelStoreContainer" CdmEntityContainer="IT_WebcamsEntities">
+          <EntitySetMapping Name="cams"><EntityTypeMapping TypeName="IT_WebcamsModel.cam"><MappingFragment StoreEntitySet="cam">
+            <ScalarProperty Name="camId" ColumnName="camId" />
+            <ScalarProperty Name="camName" ColumnName="camName" />
+            <ScalarProperty Name="camShortDesc" ColumnName="camShortDesc" />
+            <ScalarProperty Name="camLongDesc" ColumnName="camLongDesc" />
+            <ScalarProperty Name="camLocationName" ColumnName="camLocationName" />
+            <ScalarProperty Name="camLocationId" ColumnName="camLocationId" />
+            <ScalarProperty Name="camLat" ColumnName="camLat" />
+            <ScalarProperty Name="camLong" ColumnName="camLong" />
+            <ScalarProperty Name="camInterval" ColumnName="camInterval" />
+            <ScalarProperty Name="camJpegUri" ColumnName="camJpegUri" />
+            <ScalarProperty Name="camJpegQuality" ColumnName="camJpegQuality" />
+            <ScalarProperty Name="isEnabled" ColumnName="isEnabled" />
+            <ScalarProperty Name="isBlurred" ColumnName="isBlurred" />
+            <ScalarProperty Name="created" ColumnName="created" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="db">
+        <EntityTypeShape EntityType="IT_WebcamsModel.cam" Width="1.5" PointX="0.75" PointY="0.75" Height="3.7109993489583326" IsExpanded="true" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

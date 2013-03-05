@@ -1,0 +1,37 @@
+﻿@model SDES___Webcams.Models.cam
+
+@{
+    ViewBag.Title = Model.camName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section links{
+    <ul class="content-main-links">
+        <li>@Html.ActionLink("Back to List", "Index")</li>
+    </ul>
+}
+
+<script type="text/javascript">
+    setTimeout('location.reload()', 8000);
+</script>
+
+<div class="sidebar-right">
+    <h3>Campus Location:</h3>
+    <p>
+        <a href="http://map.ucf.edu/?show=@Model.camLocationId" class="external">@Model.camLocationName</a>
+    </p>
+    <h3>Description:</h3>
+    <p>
+        @Model.camLongDesc
+    </p>
+</div>
+
+<div class="left">
+    <div id="image">
+        <img src="@Url.Action("Frame", new { @id = Model.camId })" alt="webcam" class="details-view" />
+    </div>
+    <p>
+        <em>Note: Image quality is intentionally degraded for security purposes. As Microsoft Internet Explorer does not support Motion-JPEGs, 
+        this page will refresh every eight (8) seconds.</em>
+    </p>
+</div>

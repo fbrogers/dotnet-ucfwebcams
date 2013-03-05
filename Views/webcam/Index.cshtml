@@ -1,0 +1,23 @@
+﻿@model IEnumerable<SDES___Webcams.Models.cam>
+
+@{
+    ViewBag.Title = string.Empty;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@foreach (var item in Model) {
+    
+    <div class="jbox ipad">
+        <div class="jbox-inner">
+            <div class="jbox-title">
+                <a href="@Url.Action("Details", new{ @id = item.camId })">
+                    @item.camName
+                </a>
+            </div>  
+            <a href="@Url.Action("Details", new{ @id = item.camId })">
+                <img src="@Url.Action("Frame", new { @id = item.camId })" class="webcam-thumb" alt="webcam" />
+            </a>
+        </div>
+    </div>
+    
+}

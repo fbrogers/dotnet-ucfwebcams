@@ -1,0 +1,100 @@
+﻿@model IEnumerable<SDES___Webcams.Models.cam>
+
+@{
+    ViewBag.Title = "All Webcams";
+    Layout = "~/Areas/admin/Views/Shared/_Admin.cshtml";
+}
+
+@section links{
+    <ul class="content-main-links">
+        <li>@Html.ActionLink("Add New Camera", "Create", "cam", new { area = "admin"}, null)</li>
+    </ul>
+}
+
+<table class="grid">
+    <tr>
+        <th scope="col" style="width: 100px"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Location</th>
+        <th scope="col">Image URI</th>
+        <th scope="col">Quality</th>
+        <th scope="col">Blurred</th>
+        <th scope="col">Enabled</th>
+    </tr>
+    @foreach(var cam in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Details", new { id = cam.camId })">
+                    <img src="@Url.Content("~/Content/fff_page_white_magnify.png")" alt="icon" class="icon" title="Details"/>
+                </a>
+                <a href="@Url.Action("Edit", new { id = cam.camId })">
+                    <img src="@Url.Content("~/Content/fff_page_white_edit.png")" alt="icon" class="icon" title="Edit"/>
+                </a>
+                <a href="@Url.Action("Delete", new { id = cam.camId })">
+                    <img src="@Url.Content("~/Content/fff_delete.png")" alt="icon" class="icon" title="Delete"/>
+                </a>
+            </td>
+            <td>
+                @cam.camName
+            </td>
+            <td>
+                <a href="http://map.ucf.edu/?show=@cam.camLocationId">[@cam.camLocationName]</a>
+                <a href="http://maps.google.com/?q=@cam.camLat, @cam.camLong">[Google]</a>
+            </td>
+            <td>
+                <a href="@cam.camJpegUri">[Link]</a>
+            </td>
+            <td>
+                @{
+                    var message = cam.camJpegQuality.ToString();
+                    switch(cam.camJpegQuality)
+                    {
+                        case 20:
+                            message = "low";
+                            break;
+                        case 40:
+                            message = "medium";
+                            break;
+                        case 60:
+                            message = "high";
+                            break;
+                        case 90:
+                            message = "max";
+                            break;
+                    }
+                }
+
+                <img src="@Url.Content("~/Content/quality_" + message + ".gif")" alt="icon" class="clean" title="@message"/>
+            </td>
+            <td>
+                @using (Html.BeginForm("Blurred", "cam", FormMethod.Post))
+                {
+                    @Html.HiddenFor(m => cam.camId)
+                    if (cam.isBlurred)
+                    {
+                        <input type="image" src="@Url.Content("~/Content/fff_image_blurry.png")" alt="icon" class="clean" title="Blurred"/>
+                    }
+                    else
+                    {
+                        <input type="image" src="@Url.Content("~/Content/fff_image.png")" alt="icon" class="clean" title="Not Blurred"/>
+                    }
+                }
+            </td>
+            <td>
+                @using (Html.BeginForm("Enabled", "cam", FormMethod.Post))
+                {
+                    @Html.HiddenFor(m => cam.camId)
+                    if (cam.isEnabled)
+                    {
+                        <input type="image" src="@Url.Content("~/Content/fff_accept.png")" alt="icon" class="clean" title="Enabled"/>
+                    }
+                    else
+                    {
+                        <input type="image" src="@Url.Content("~/Content/control_pause.png")" alt="icon" class="clean" title="Disabled"/>
+                    }
+                }      
+            </td>
+        </tr>
+    }
+</table>

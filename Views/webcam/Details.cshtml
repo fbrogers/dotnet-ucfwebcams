@@ -1,0 +1,30 @@
+﻿@model SDES___Webcams.Models.cam
+
+@{
+    ViewBag.Title = Model.camName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section links{
+    <ul class="content-main-links">
+        <li>@Html.ActionLink("Back to List", "Index")</li>
+    </ul>
+}
+
+<div class="sidebar-right">
+    <h3>Campus Location:</h3>
+    <p>
+        <a href="http://map.ucf.edu/?show=@Model.camLocationId" class="external">@Model.camLocationName</a>
+    </p>
+    <h3>Description:</h3>
+    <p>
+        @Model.camLongDesc
+    </p>
+</div>
+
+<div class="left">
+    <img src="@Url.Action("Stream", new { @id = Model.camId })" alt="webcam" class="details-view" />
+
+    <p><em>Note: Image quality is intentionally degraded for security purposes.</em></p>
+</div>
+
