@@ -5,8 +5,9 @@
     var kml = string.Format("http://maps.google.com/?q=http%3A%2F%2Fwebcams.sdes.ucf.edu{0}", Url.Action("kml", "webcam"));
 }
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
-	<title>@html_title Campus Webcams &raquo; UCF</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@html_title Campus Webcams &raquo; UCF</title>
     
     <!-- CUSTOM UCF MARKETING HEADER -->
 	<script type="text/javascript" src="http://assets.sdes.ucf.edu/scripts/jquery.min.js"></script>
@@ -19,7 +20,11 @@
     <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_ucf.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" type="text/css" media="screen"/>
     <link rel="stylesheet" href="http://assets.sdes.ucf.edu/css/sdes_print.css" type="text/css" media="print" />
-	<link rel="shortcut icon" href="http://assets.sdes.ucf.edu/images/favicon_black.png" type="text/css" />
+    <link rel="shortcut icon" href="http://assets.sdes.ucf.edu/images/favicon_black.png" type="text/css" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://assets.sdes.ucf.edu/images/icons/ios-144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://assets.sdes.ucf.edu/images/icons/ios-114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://assets.sdes.ucf.edu/images/icons/ios-72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="http://assets.sdes.ucf.edu/images/icons/ios-57.png" />
 	<!-- /STYLES -->
 		
 	<!-- GA-ASYNC -->
@@ -170,7 +175,9 @@
 			<div id="w3c">
 				<a href="http://validator.w3.org/check?uri=referer">Valid HTML 5</a> &bull;
 				<a href="http://jigsaw.w3.org/css-validator/check/referer?profile=css3">Valid CSS 3</a> &bull;
-				<a href="@Url.Action("Index", "cam", new{ area = "admin" }, null)"><img src="http://assets.sdes.ucf.edu/images/sub-footer-pegasus.png" id="pegasus" alt="Pegasus" /></a>
+                <a href="@Url.Action("Index", "cam", new{ area = "admin" }, null)">
+                    <img src="http://assets.sdes.ucf.edu/images/sub-footer-pegasus.png" id="pegasus" alt="Pegasus" />
+                </a>
 			</div>
             <span>
                 Copyright &copy; @DateTime.Now.Year <a href="http://www.sdes.ucf.edu/">Student Development and Enrollment Services</a>

@@ -58,7 +58,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Kaliko.ImageLibrary">
-      <HintPath>..\..\..\Users\jcrogers\Desktop\Kaliko.ImageLibrary.dll</HintPath>
+      <HintPath>..\Libraries\Kaliko.ImageLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Data.Entity" />

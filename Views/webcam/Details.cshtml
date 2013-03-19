@@ -11,6 +11,12 @@
     </ul>
 }
 
+<div class="left">
+    <img src="@Url.Action("Stream", new { @id = Model.camId })" alt="webcam" class="details-view" />
+
+    <p><em>Note: Image quality is intentionally degraded for security purposes.</em></p>
+</div>
+
 <div class="sidebar-right">
     <h3>Campus Location:</h3>
     <p>
@@ -22,9 +28,4 @@
     </p>
 </div>
 
-<div class="left">
-    <img src="@Url.Action("Stream", new { @id = Model.camId })" alt="webcam" class="details-view" />
-
-    <p><em>Note: Image quality is intentionally degraded for security purposes.</em></p>
-</div>
-
+<div class="hr-clear"></div>

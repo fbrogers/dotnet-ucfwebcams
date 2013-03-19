@@ -55,3 +55,123 @@ img.admin-details-stream {
     border: 0;
     margin-top: 2px;
 }
+
+@media (max-width: 950px){
+	#slate_container, #nav-under, #footer_container, 
+	#UCFHBHeader form, #UCFHBHeader #UCFHBMy_ucf,
+	.content-main-links, #subtitle, 
+	.content-main-top, .content-main-bottom{
+		display: none;
+	}	
+	
+    #UCFHBHeader {
+        padding: 0.25em 1em;
+        overflow-x: hidden;
+    }	
+	
+	body{
+		background: white url('http://assets.sdes.ucf.edu/images/bgs/ucf.png') repeat-x 0px -30px;
+	}
+	
+	.content-main, #sub_footer_container{
+		padding: 0 1em 1em 1em;	
+	}
+	
+	#header_container{
+		padding: 1em 1em 0 1em;
+	}
+	
+	.content-main .left, .content-main .sidebar-right, .floatright, .floatleft, .global-col3-1, .global-col3-2, .global-col3-3{
+		float: none;	
+		width: auto;
+		margin: 0;
+	}
+	
+	#header_container, #header, .content-main-top, .content-main-bottom, .content-main-body {
+		width: auto;
+	}
+	
+	#header_container{
+		width: auto;
+		background: none;
+		height: auto;
+	}
+	
+	#header, #title{
+		height: auto;	
+	}
+	
+	#title{
+		font-size: 1.8em;	
+		float: none;
+		position: relative;
+	    letter-spacing: normal;
+	    margin-bottom: 1em;
+	}
+	
+	#content_container{
+		background: none;	
+	}
+	
+	.content-main .header{
+		border: 0px;	
+		padding: 0px;
+		margin-bottom: 5px;
+	}
+	
+	.content-main h2{
+		font-size: 1.5em;	
+	}
+		
+	p{
+		text-align: left;
+	}
+	
+	.sidebar-right{
+	    float: none;
+	}
+
+    .content-main h1{
+        font-size: 2.5em;
+	}
+	
+	img{
+		max-width: 100%;	
+	}
+		
+	.content-end{
+		padding: 1em;
+		height: auto;	
+	}
+	
+	.content-main .jbox {
+	    margin: 0 2em 2em 0;
+	    padding: 0;
+	    background: none;
+	    box-shadow: 0px 2px 5px 1px #bbb;
+	}
+	
+	.content-end ul li{
+		display: block;
+		padding: 0 0 .5em 0;
+	}
+	
+	#sub_footer_container{
+		height: auto;
+		background-color: #161616;
+	}
+	
+	#sub_footer{
+		width: auto;	
+	}
+	
+	#w3c{
+		float: none;	
+	}
+	
+    img.details-view 
+    {
+        min-height: inherit;
+        max-height: inherit;
+    }
+}
