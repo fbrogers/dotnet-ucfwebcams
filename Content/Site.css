@@ -1,22 +1,18 @@
-.editor-field.short textarea
-{
+.editor-field.short textarea{
     width: 500px;
     height: 50px;
 }
 
-.editor-field.long textarea
-{
+.editor-field.long textarea{
     width: 500px;
     height: 200px;
 }
 
-.jbox.ipad .outer-content
-{
+.jbox.ipad .outer-content{
     height: 2em;
 }
 
-.content-main .jbox
-{
+.content-main .jbox{
     margin-bottom: 15px;
 }
 
@@ -37,8 +33,7 @@
     margin-top: -8px
 }
 
-img.details-view 
-{
+img.details-view {
     width: 630px;
     min-height: 355px;
     max-height: 480px;
@@ -57,8 +52,7 @@ img.admin-details-stream {
 }
 
 @media (max-width: 950px){
-	#slate_container, #nav-under, #footer_container, 
-	#UCFHBHeader form, #UCFHBHeader #UCFHBMy_ucf,
+	#slate_container, #nav-under, #UCFHBHeader form, #UCFHBHeader #UCFHBMy_ucf,
 	.content-main-links, #subtitle, 
 	.content-main-top, .content-main-bottom{
 		display: none;
@@ -87,7 +81,7 @@ img.admin-details-stream {
 		margin: 0;
 	}
 	
-	#header_container, #header, .content-main-top, .content-main-bottom, .content-main-body {
+	#header_container, #header, #footer, .content-main-top, .content-main-bottom, .content-main-body {
 		width: auto;
 	}
 	
@@ -102,11 +96,11 @@ img.admin-details-stream {
 	}
 	
 	#title{
-		font-size: 1.8em;	
+		font-size: 2.8em;	
 		float: none;
 		position: relative;
 	    letter-spacing: normal;
-	    margin-bottom: 1em;
+	    margin-bottom: 0.25em;
 	}
 	
 	#content_container{
@@ -141,7 +135,7 @@ img.admin-details-stream {
 		
 	.content-end{
 		padding: 1em;
-		height: auto;	
+		height: auto;
 	}
 	
 	.content-main .jbox {
@@ -159,6 +153,7 @@ img.admin-details-stream {
 	#sub_footer_container{
 		height: auto;
 		background-color: #161616;
+		clear: both;
 	}
 	
 	#sub_footer{
@@ -169,9 +164,64 @@ img.admin-details-stream {
 		float: none;	
 	}
 	
-    img.details-view 
-    {
+    img.details-view {
         min-height: inherit;
         max-height: inherit;
     }
+    
+    #footer_container {
+    	padding: 0 1em 1em 1em;
+    	background-color: #222;
+    }
+    
+    #footer_container, #footer #search, #footer #search #input {
+    	width: auto;
+    	height: auto;
+    }
+    
+    #footer div.hr {
+    	border: 0;
+    	height: 0.5em;
+    }
+    
+    #footer .col3-1, #footer .col3-2, #footer .col3-3 {
+    	width: auto;
+    	margin: 0 0 2em 0;
+    	float: none;
+	}
+	
+	#footer p {
+		font-size: 1.2em;
+		line-height: normal;
+	}
+    
+    #footer ul{
+    	line-height: normal;
+	}
+    
+    #footer li{
+    	border: 0;
+    	font-size: 1.2em;
+	}
+    
+    #footer li a{
+    	padding: 0.5em 0;
+	}
+	
+	#footer #search {
+		margin: 0 0 2em 0;
+		background: none;
+	}
+	
+	#footer #search #input {
+		margin: 0 0.5em 0 0;
+		padding: 0.333em 0 0.333em 1em;
+		background: #fff;
+		border: inherit;
+	}
+	
+	#footer #search input[type='image'] {
+		padding: 0.333em;
+		background: #777;
+	}	
 }
